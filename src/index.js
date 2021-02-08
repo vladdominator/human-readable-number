@@ -9,4 +9,12 @@ module.exports = function toReadable (number) {
          }
       }
    }
+   if(number > 10 && number < 20){
+      for(let i = 0; i < numberTwo.length; i++){
+         if(number % 10 === i + 1){
+            return numberTwo[i];
+         }
+      }
+   }
+
 }
