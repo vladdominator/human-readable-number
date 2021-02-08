@@ -16,5 +16,31 @@ module.exports = function toReadable (number) {
          }
       }
    }
+   if(number >= 20 && number < 100){
+      let strElements;
+      let strDecimals;
+      let element = number % 10;
+      if(Number.isInteger(number / 10)){
+         strElements = '';
+      }
+      else{
+         for(let i = 0; i < numberCount.length; i++){
+            if(element === i){
+               strElements = numberCount[i];
+            }
+         }
+      }
+      for(let i = 0; i < numberTens.length; i++){
+         if(Math.floor(number / 10) === i + 2){
+            strDecimals = numberTens[i];
+         }
+      }
+      if(strElements){
+         return strDecimals + " " + strElements;
+      }
+      else{
+         return strDecimals;
+      }
+   }
 
 }
